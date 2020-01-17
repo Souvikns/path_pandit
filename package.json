@@ -14,5 +14,15 @@
     "express": "^4.17.1",
     "mysql2": "^2.1.0",
     "sequelize": "^5.21.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Souvikns/path_pandit.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Souvikns/path_pandit/issues"
+  },
+  "homepage": "https://github.com/Souvikns/path_pandit#readme"
 }
