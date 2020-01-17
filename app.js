@@ -23,7 +23,7 @@ app.use(express.static(__dirname+"/public"))
 //Routing 
 
 app.get("/",(req,res)=>{
-    res.render("index",{})
+    res.sendFile(__dirname+"/views/index.html")
 })
 
 //================================
