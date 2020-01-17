@@ -1,6 +1,8 @@
 //requiring modules 
 const express = require('express')
 const bodyParser = require('body-parser')
+const ejs = require('ejs')
+const errorPage = require('./controller/error')
 
 //================================
 
@@ -8,6 +10,11 @@ const bodyParser = require('body-parser')
 //middleware 
 
 const app = express()
+app.use(bodyParser.urlencoded({extended: true}))
+app.set('view engine','ejs')
+app.set('views','views')
+
+app.use(express.static(__dirname+"/public"))
 
 //================================
 
@@ -16,11 +23,16 @@ const app = express()
 //Routing 
 
 app.get("/",(req,res)=>{
-    res.sendFile(__dirname+"/views/index.html")
+    res.render("index",{})
 })
 
 //================================
 
+//Error Page 
+
+app.use(errorPage.errorPage)
+
+//================================
 
 
 //port 
