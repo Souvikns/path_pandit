@@ -36,14 +36,10 @@ app.use(
 
 //Routing 
 
-app.use('/home', homeRoute)
+app.use(homeRoute)
 app.use('/user', userRoute)
 app.use('/pandit', panditRoute)
 app.use('/auth', authRoute)
-
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/views/index.html")
-})
 
 //================================
 
