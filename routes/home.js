@@ -14,7 +14,7 @@ const router = express.Router()
 
 //Routes 
 
-router.get('/as',(req,res)=>{
+router.get('/as', (req, res) => {
     res.send("Hello")
 })
 
@@ -24,4 +24,4 @@ router.get('/as',(req,res)=>{
 
 
 
-module.exports=router
+module.exports = router

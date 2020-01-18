@@ -10,6 +10,7 @@ const errorPage = require('./controller/error')
 const homeRoute = require('./routes/home')
 const userRoute = require('./routes/user')
 const panditRoute = require('./routes/pandit')
+const authRoute = require('./routes/auth')
 //================================
 
 
@@ -38,6 +39,7 @@ app.use(
 app.use('/home', homeRoute)
 app.use('/user', userRoute)
 app.use('/pandit', panditRoute)
+app.use('/auth', authRoute)
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/views/index.html")
