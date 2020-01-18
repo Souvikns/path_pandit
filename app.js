@@ -2,6 +2,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const ejs = require('ejs')
+const session = require('express-session')
 
 //routers
 const errorPage = require('./controller/error')
@@ -22,6 +23,10 @@ app.set('view engine','ejs')
 app.set('views','views')
 
 app.use(express.static(__dirname+"/public"))
+app.use(
+    session({secret: 'my secret',resave: 'false',saveUninitialized: 'false'}
+    ))
+
 
 //================================
 
