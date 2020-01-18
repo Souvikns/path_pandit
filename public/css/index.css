@@ -1,8 +1,122 @@
-h1{
+.s_button {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .5rem;
+    margin: .5rem;
+  
+  }
+.red-button-large {
+    
+    border-color: red;
+    color: red;
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    width: 100%;
+  }
+  .red-button-large:hover{
+      background-color: red;
+      color: white;
+  }
+
+.nav-link{
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    
+    
+}
+.nav-link:hover{
+    color: #FF0D0D;
+}
+.nav-item {
+    padding: 0 18px;
+    
+    
+  }
+  .dropdown-item{
+      color: white;
+  }
+.dropdown-menu{
+    background-color: #FF0D0D;
+}
+.landing-image1{
+    position: absolute;
+    width: 50%;
+    margin-left: 450px;
+    margin-top: 70px;
+}
+.landing-image2{
+    position: absolute;
+    width: 200px;
+    margin-left: 1600px;
+    margin-top: 350px;
+}
+.container-fluid{
+    padding: 0;
+    margin: 0;
+}
+#Top{
+    background-color: #FEC969;
+    height: 650px;
+    padding: 30px;
+}
+.diya1{
+    margin-left: 50px;
+}
+.diya2{
+    margin-right: 50px;
+}
+#Mantra{
+    text-align: center;
+    padding: 50px 50px 0 50px;
     color: red;
 }
-.main-background{
-    height: 800px;
-    
+.card-header{
+    text-align: center;
+    color: #FF0D0D;
+}
+#Mid{
+    padding: 100px;
+}
+@media (max-width:1100px){
+    .navbar-toggler {
+        background-color: white;
+    }
+    #Top{
+        height: 400px;
+    }
+    .landing-image1{
+        position: absolute;
+        margin-left: 180px;
+       
+        margin-top: 70px;
+    }
+    .landing-image2{
+        position: absolute;
+        width: 100px;
+        margin-left: 680px;
+        margin-top: 200px;
+    }
+    h1{
+        font-size: 1rem;
+    }
+    .diya1{
+        margin-left: 50px;
+        width: 90px;
+    }
+    .diya2{
+        margin-right: 50px;
+        width: 90px;
+    }
 
 }

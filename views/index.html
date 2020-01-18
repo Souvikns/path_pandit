@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title> 
+    <title>PathPooja.com</title> 
+    <link rel="icon" href="images\swastik.png">
+    <!-- -------Font---------- -->
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Merriweather+Sans|Montserrat|Poppins&display=swap" rel="stylesheet">
+    
     <!-- -----BootStrap-------->
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
     <!-- --------CSS--------- -->
@@ -18,41 +21,98 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="fluid-container">
-        <section id="Top">
-            <div class="fluid-container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/">PathPooja.com</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                </li>
-                
-             </ul>
+  <div class="container-fluid">
+    <section id="Top">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#"><img src="images\brand.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse nav-links" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Login
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">User</a>
+                <a class="dropdown-item" href="#">Panditji</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <img class="landing-image1"src="images\landing.png" alt="">
+        <img class="landing-image2"src="images\image1.png" alt="">
+      </div>
+    </section>
+    <section id="Mantra">
+      <div>
+        <h1>ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं भर्गो देवस्यः धीमहि धियो यो नः प्रचोदयात्</h1>
+        <img class="diya2"src="images\diya2.png" alt="">
+        <img src="images\swastik.png" alt="">
+        <img class="diya1"src="images\diya.png" alt="">
+      </div>
+    </section>
+    <section id="Mid">
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6 price-card">
+          <div class="card ">
+            <div class="card-header">
+              <h3> संस्कार पूजा (सोलह संस्कार)</h3>
             </div>
-          </nav>
+            <div class="card-body">
+              
+              
+              <button type="button " class="s_button red-button-large">View All</button>
+            </div>
+  
+          </div>
         </div>
-        <div class="fluid-container main-background">
-            <img src="images/image1.png" alt="">
+        <div class="col-lg-4 col-md-6 price-card">
+          <div class="card ">
+            <div class="card-header">
+              <h3> ज्योतिष</h3>
+            </div>
+            <div class="card-body">
+              
+              <p> गर्भाधान संस्कार</p>
+              
+              <button type="button" class="s_button red-button-large">View All</button>
+            </div>
+  
+          </div>
         </div>
-        </section>
-
-    </div>
-
-    
-    
+        <div class="col-lg-4 col-md-12 price-card ">
+          <div class="card">
+            <div class="card-header">
+              <h3> कथा,कीर्तन ,पाठ ,अभिषेक</h3>
+            </div>
+            <div class="card-body">
+              
+              
+              <button type="button" class="s_button red-button-large">View All</button>
+            </div>
+  
+          </div>
+        </div>
+  
+  
+      </div>
+    </section>
+    <section class="Bottom"></section>
+  </div>
+ 
 </body>
 </html>
