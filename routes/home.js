@@ -1,6 +1,7 @@
 //importing modules
 
 const express = require('express')
+const homeController = require('../controller/homeController')
 
 //=============================
 
@@ -14,14 +15,15 @@ const router = express.Router()
 
 //Routes 
 
-router.get('/as',(req,res)=>{
-    res.send("Hello")
-})
+router.route('/')
+.get(homeController.getHomePage)
 
+router.route('/about')
+.get(homeController.getAboutPage)
 
 //=============================
 
 
 
 
-module.exports=router
+module.exports = router

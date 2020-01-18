@@ -2,24 +2,33 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const ejs = require('ejs')
+const session = require('express-session')
+const sequelize = require('./database/connection')
 
 //routers
 const errorPage = require('./controller/error')
 const homeRoute = require('./routes/home')
 const userRoute = require('./routes/user')
 const panditRoute = require('./routes/pandit')
-
+const authRoute = require('./routes/auth')
 //================================
+
+
+//============================================
 
 
 //middleware 
 
 const app = express()
-app.use(bodyParser.urlencoded({extended: true}))
-app.set('view engine','ejs')
-app.set('views','views')
+app.use(bodyParser.urlencoded({ extended: true }))
+app.set('view engine', 'ejs')
+app.set('views', 'views')
 
-app.use(express.static(__dirname+"/public"))
+app.use(express.static(__dirname + "/public"))
+app.use(
+    session({ secret: 'my secret', resave: 'false', saveUninitialized: 'false' }
+    ))
+
 
 //================================
 
@@ -27,13 +36,10 @@ app.use(express.static(__dirname+"/public"))
 
 //Routing 
 
-app.use('/home', homeRoute)
+app.use(homeRoute)
 app.use('/user', userRoute)
 app.use('/pandit', panditRoute)
-
-app.get("/",(req,res)=>{
-    res.sendFile(__dirname+"/views/index.html")
-})
+app.use('/auth', authRoute)
 
 //================================
 
@@ -46,8 +52,16 @@ app.use(errorPage.errorPage)
 
 //port 
 
-app.listen(3000,()=>{
-    console.log("Server started at port 3000")
-})
+sequelize.sync()
+    .then(res => {
+        app.listen(3000, () => {
+            console.log("Server started at port 3000")
+        })
+    })
+    .catch(err => {
+        console.log(err)
+    })
+
+
 
 //================================
