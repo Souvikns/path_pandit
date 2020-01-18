@@ -1,3 +1,7 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+/* ---------------------------Buttons--------------------------- */
 .s_button {
     display: inline-block;
     font-family: 'Montserrat', sans-serif;
@@ -27,48 +31,55 @@
       background-color: red;
       color: white;
   }
+/* ----------------------------*************************----------------------- */
 
+
+/*------------------------------NavBar------------------------------*/
 .nav-link{
     color: white;
     font-size: 1.2rem;
     font-family: 'Montserrat', sans-serif;
-    
-    
 }
 .nav-link:hover{
     color: #FF0D0D;
 }
 .nav-item {
     padding: 0 18px;
-    
-    
-  }
+}
   .dropdown-item{
       color: white;
   }
 .dropdown-menu{
     background-color: #FF0D0D;
 }
+/*****************************************Top Section***********************************/
+#Top{
+    background-color: #FEC969;
+    height: 650px;
+    padding: 30px;
+}
 .landing-image1{
     position: absolute;
     width: 50%;
-    margin-left: 450px;
+    margin-left: 20%;
     margin-top: 70px;
 }
 .landing-image2{
     position: absolute;
-    width: 200px;
-    margin-left: 1600px;
+    width: 10%;
+    margin-left: 80%;
     margin-top: 350px;
 }
 .container-fluid{
     padding: 0;
     margin: 0;
 }
-#Top{
-    background-color: #FEC969;
-    height: 650px;
-    padding: 30px;
+
+/***********************************************Mantra***********************************************/
+#Mantra{
+    text-align: center;
+    padding: 5% 5% 0 5%;
+    color: red;
 }
 .diya1{
     margin-left: 50px;
@@ -76,36 +87,89 @@
 .diya2{
     margin-right: 50px;
 }
-#Mantra{
-    text-align: center;
-    padding: 50px 50px 0 50px;
-    color: red;
+
+/**************************************Mid Section***************************************************/
+#Mid{
+    padding: 5%;
 }
 .card-header{
     text-align: center;
     color: #FF0D0D;
 }
-#Mid{
-    padding: 100px;
+#Bottom{
+    text-align: center;
+    background-color: rgba(236, 121, 14, 0.712);
+    color: white;
+    padding: 2%;
 }
-@media (max-width:1100px){
+/***************************************************Media Query**************************************************/
+
+@media (max-width:1200px)
+{
+    .landing-image1{
+        position: absolute;
+        width: 70%;
+        margin-left: 10%;
+        margin-top: 10%;
+    }
+    .landing-image2{
+        position: absolute;
+        width: 15%;
+        margin-left: 75%;
+        margin-top: 38%;
+    }
+    h1{
+        font-size: 1.5rem;
+        padding: 2% 0;
+    }
+    .diya1{
+        margin-left: 50px;
+        width: 90px;
+        width: 15%;
+    }
+    .diya2{
+        margin-right: 50px;
+        width: 90px;
+        width: 15%;
+    }
+    .swastik{
+        width: 10%;
+    }
+    #Mantra{
+        text-align: center;
+        padding: 5% 5% 2.5% 5%;
+        color: red;
+    }
+    h3{
+        font-size: 1.2rem;
+    }
+    #Mid{
+        padding: 5%;
+    }
+
+}
+@media (max-width:900px){
+    .Logo{
+        width: 200px;
+    }
     .navbar-toggler {
         background-color: white;
     }
     #Top{
-        height: 400px;
+        height: 350px;
     }
     .landing-image1{
         position: absolute;
-        margin-left: 180px;
-       
-        margin-top: 70px;
+        margin-left: 3%;
+       width: 75%;
+        margin-top: 15%;
     }
     .landing-image2{
         position: absolute;
-        width: 100px;
-        margin-left: 680px;
-        margin-top: 200px;
+        width: 15%;
+        margin-left: 70%;
+        margin-top: 55%;
+        visibility: hidden;
     }
     h1{
         font-size: 1rem;
@@ -113,10 +177,40 @@
     .diya1{
         margin-left: 50px;
         width: 90px;
+        width: 15%;
     }
     .diya2{
         margin-right: 50px;
         width: 90px;
+        width: 15%;
     }
+    .swastik{
+        width: 15%;
+    }
+    @media (max-width:800px){
+        .landing-image1{
+            
+            margin-left: 12.5%;
+           width: 65%;
+            margin-top: 5%;
+        }
+    }
+    @media (max-width:500px){
+        .Logo{
+            width: 150px;
+        }
+        .landing-image1{
+            
+            margin-left: 8%;
+           width: 70%;
+            margin-top: 12%;
+        }
+        #Top{
+            background-color: #FEC969;
+            height: 300px;
+            padding: 30px;
+        }
+    }
+    
 
 }
