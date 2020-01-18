@@ -8,8 +8,10 @@ const errorPage = require('./controller/error')
 const homeRoute = require('./routes/home')
 const userRoute = require('./routes/user')
 const panditRoute = require('./routes/pandit')
-
 //================================
+
+
+//============================================
 
 
 //middleware 
