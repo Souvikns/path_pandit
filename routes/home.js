@@ -21,6 +21,8 @@ router.route('/')
 router.route('/about')
 .get(homeController.getAboutPage)
 
+router.get('/puja',homeController.getPuja)
+
 //=============================
 
 
