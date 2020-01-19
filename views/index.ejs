@@ -73,6 +73,11 @@
               <h3> संस्कार पूजा (सोलह संस्कार)</h3>
             </div>
             <div class="card-body">
+              <% for(i = 0;i<puja.length;i++){ %>
+                <% if(puja[i].pcat === 1) { %>
+                  <p><a href=<%-puja[i].p_id %> > <%- puja[i].p_name %>  </a></p>
+                <% } %>
+              <%} %>
               
               
               <button type="button " class="s_button red-button-large">View All</button>
@@ -87,7 +92,11 @@
             </div>
             <div class="card-body">
               
-              <p> गर्भाधान संस्कार</p>
+              <% for(i = 0;i<puja.length;i++){ %>
+                <% if(puja[i].pcat === 2) { %>
+                  <p><a href=<%-puja[i].p_id %> > <%- puja[i].p_name %>  </a></p>
+                <% } %>
+              <%} %>
               
               <button type="button" class="s_button red-button-large">View All</button>
             </div>
@@ -100,6 +109,11 @@
               <h3> कथा,कीर्तन ,पाठ ,अभिषेक</h3>
             </div>
             <div class="card-body">
+              <% for(i = 0;i<puja.length;i++){ %>
+                <% if(puja[i].pcat === 3) { %>
+                  <p><a href=<%-puja[i].p_id %> > <%- puja[i].p_name %>  </a></p>
+                <% } %>
+              <%} %>
               
               
               <button type="button" class="s_button red-button-large">View All</button>
