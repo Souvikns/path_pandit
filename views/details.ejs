@@ -2,31 +2,54 @@
 
 <%- include('includes/navbar') -%>
 
-
+<div class="container-fluid">
+   
+    <div class="desc-top">
 <center>
-    <h1>
+    <img class="desc-image"src="images\image1.png" alt="">
+    <h1 class="desc-h1">
         <%= title[0].p_name  %>
     </h1>
+    
 </center>
+</div>
+<hr>
+<div class="container-fluid desc-mid">
 
-
-<h2>
+    <!-- ---------------------------Ist Div--------------------------- -->
+<div class="desc-p-div">
+<h2 class="desc-h2">
     <%= body.description.title  %>
 </h2>
+<hr>
+<div>
+<p class="desc-p"> <%= body.description.body %> </p>
+</div>
+</div>
 
-<p> <%= body.description.body %> </p>
-
-<h2>
+    <!-- ----------------------------2nd Div---------------------------- -->
+<div class="desc-p-div">
+<h2 class="desc-h2">
     <%= body.benefit.title  %>
 </h2>
+<hr>
+<div>
+<p class="desc-p"> <%= body.benefit.body %> </p>
+</div>
+</div>
 
-<p> <%= body.benefit.body %> </p>
-
-<h2>
+   <!-- ---------------------------------3rd Div-------------------------- -->
+<div class="desc-p-div">
+<h2 class="desc-h2">
     <%= body.materials.title  %>
 </h2>
-
-<p> <%= body.materials.body %> </p>
+<hr>
+<div>
+<p class="desc-p"> <%= body.materials.body %> </p>
+</div>
+</div>
+</div>
 
 
 <%- include('includes/footer')   -%>
+</div>

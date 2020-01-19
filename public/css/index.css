@@ -1,6 +1,8 @@
 body{
     font-family: 'Montserrat', sans-serif;
 }
+h2{
+}
 /* ---------------------------Buttons--------------------------- */
 .s_button {
     display: inline-block;
@@ -35,6 +37,9 @@ body{
 
 
 /*------------------------------NavBar------------------------------*/
+.navbar{
+   background-color: #FEC969;
+}
 .nav-link{
     color: white;
     font-size: 1.2rem;
@@ -234,3 +239,68 @@ body{
     
 
 }
+/*---------------------------------------------*******************************************************-------------------------------------------*/
+
+
+
+
+/***************************************************Details.Css*******************************************/
+.desc-top{
+    margin: 3% 0 3% 0;color: red;
+}
+.desc-image{
+    position: absolute;
+    width: 5%;
+    margin-left: 10%;
+}
+.desc-mid{
+    padding: 0 5% 5% 5%;
+}
+.desc-h2{
+    font-size: 2rem;
+    padding: 1% 0 1% 0;
+    color: #FF851B;
+}
+.desc-p{
+    font-size: 1.1rem;
+    line-height: 2;
+   
+   
+}
+.desc-p-div{
+    border-style: solid;
+   border-width: 1px;
+   margin-top: 2px;
+   padding: 1%;
+   background-color: wheat;
+}
+.desc-p-div:hover{
+    transform: scale(1.1);
+
+}
+
+/**************************************************************Media Query**************************************/
+@media (max-width:1200px){
+    .desc-h1{
+        font-size: 1.5rem;
+    }
+    .desc-image{
+        position: absolute;
+        width: 9%;
+        margin-left: 25%;
+        margin-top: 10%;
+    }
+    
+    .desc-h2{
+        font-size: 1.2rem;
+        padding: 1% 0 1.5% 0;
+        color: #FF851B;
+    }
+    .desc-p{
+        font-size: 1rem;
+        line-height: 2;
+       
+    }
+
+}
+/*--------------------------------------------------*******************************************-----------------------------------------------*/
