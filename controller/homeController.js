@@ -1,4 +1,5 @@
 const Puja = require('../model/pooja')
+const details = require('../util/filehandling')
 
 exports.getHomePage = (req,res)=>{
     Puja.findAll({}).then(data=>{
@@ -20,7 +21,10 @@ exports.getPuja = (req,res)=>{
             p_id: req.params.pname
         }
     }).then(data=>{
-        res.status(200).send(data)
+        res.render('details',{
+            title: data,
+            body: details
+        })
     }).catch(err=>{
         console.log(err)
         res.send("error")
