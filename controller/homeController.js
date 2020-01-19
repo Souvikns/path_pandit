@@ -12,7 +12,7 @@ exports.getHomePage = (req,res)=>{
 }
 
 exports.getAboutPage = (req,res)=>{
-    res.render('index',{})
+    res.send("About page")
 }
 
 exports.getPuja = (req,res)=>{

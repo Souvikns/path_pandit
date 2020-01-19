@@ -16,14 +16,19 @@ const router = express.Router()
 //Routes 
 
 // Signup route
-router.route('/signup')
+router.route('/:path/signup')
     .get(authController.getSignUp)
+
+// router.route('/pandit/signup')
+//     .get()
 
 
 
 // Login route
-router.route('/login')
+router.route('/:path/login')
     .get(authController.getLogin)
+
+
 
 //=============================
 
