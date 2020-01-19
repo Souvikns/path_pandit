@@ -96,6 +96,25 @@ body{
     text-align: center;
     color: #FF0D0D;
 }
+
+
+.card-body{
+    text-align: center;
+}
+.puja-link{
+    text-decoration: none;
+    
+}
+.puja-link:hover{
+   color: #FF0D0D;
+    
+    transform: scale(1.5);
+}
+.links:hover{
+    transform: scale(1.5);
+
+}
+/***************************************************Bottom******************************************/
 #Bottom{
     text-align: center;
     background-color: rgba(236, 121, 14, 0.712);
