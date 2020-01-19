@@ -109,6 +109,7 @@ body{
    color: #FF0D0D;
     
     transform: scale(1.5);
+    text-decoration: none;
 }
 .links:hover{
     transform: scale(1.5);
