@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const ejs = require('ejs')
 const session = require('express-session')
 const sequelize = require('./database/connection')
+const mysqlStore = require('mssql-session-store')(session)
 
 //routers
 const errorPage = require('./controller/error')
@@ -19,15 +20,24 @@ const authRoute = require('./routes/auth')
 
 //middleware 
 
+var options = {
+    connection: "http://www.phpmyadmin.co/sql.php?server=1&db=sql12319155",
+    ttl: 3600,
+    table: "session"
+}
+
 const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
 app.set('view engine', 'ejs')
 app.set('views', 'views')
 
 app.use(express.static(__dirname + "/public"))
-app.use(
-    session({ secret: 'my secret', resave: 'false', saveUninitialized: 'false' }
-    ))
+app.use(session({
+    secret: 'mystring',
+    resave: false,
+    saveUninitialized: false
+    //store: new mysqlStore(options)
+}))
 
 
 //================================

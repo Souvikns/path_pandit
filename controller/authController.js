@@ -25,6 +25,7 @@ exports.getSignUp = (req, res) => {
 exports.getLogin = (req, res) => {
     const path = req.params.path 
     if(path==="user"){
+        req.session.isLogin = false
         res.send("User Login page!!")
     }else{
         res.send("Pandit Login page!!")
