@@ -6,6 +6,7 @@ const session = require('express-session')
 const sequelize = require('./database/connection')
 const mysqlStore = require('mssql-session-store')(session)
 const path = require('path')
+const SequelizeStore = require('connect-session-sequelize')(session.Store)
 
 //routers
 const errorPage = require('./controller/error')
@@ -22,9 +23,7 @@ const authRoute = require('./routes/auth')
 //middleware 
 
 var options = {
-    connection: "http://www.phpmyadmin.co/sql.php?server=1&db=sql12319155",
-    ttl: 3600,
-    table: "session"
+    db: sequelize
 }
 
 const app = express()
@@ -36,8 +35,8 @@ app.use(express.static(path.join(__dirname,'public')))
 app.use(session({
     secret: 'mystring',
     resave: false,
-    saveUninitialized: false
-    //store: new mysqlStore(options)
+    saveUninitialized: false,
+    store: new SequelizeStore(options)
 }))
 
 
