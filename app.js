@@ -5,6 +5,7 @@ const ejs = require('ejs')
 const session = require('express-session')
 const sequelize = require('./database/connection')
 const mysqlStore = require('mssql-session-store')(session)
+const path = require('path')
 
 //routers
 const errorPage = require('./controller/error')
@@ -31,7 +32,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.set('view engine', 'ejs')
 app.set('views', 'views')
 
-app.use(express.static(__dirname + "/public"))
+app.use(express.static(path.join(__dirname,'public')))
 app.use(session({
     secret: 'mystring',
     resave: false,
@@ -49,7 +50,7 @@ app.use(session({
 app.use(homeRoute)
 app.use('/user', userRoute)
 app.use('/pandit', panditRoute)
-app.use('/auth', authRoute)
+app.use('/auth',authRoute)
 
 //================================
 
