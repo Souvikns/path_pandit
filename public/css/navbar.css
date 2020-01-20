@@ -1,0 +1,28 @@
+/****************************************Navbar****************************************/
+.navbar{
+    background-color: #FEC969;
+ }
+ .nav-link{
+     color: white;
+     font-size: 1.2rem;
+     font-family: 'Montserrat', sans-serif;
+ }
+ .nav-link:hover{
+     color: #FF0D0D;
+ }
+ .nav-item {
+     padding: 0 18px;
+ }
+   .dropdown-item{
+       color: white;
+   }
+ .dropdown-menu{
+     background-color: #FF0D0D;
+ }
+ /***********************************Footer****************************************/
+ #Bottom{
+    text-align: center;
+    background-color: rgba(236, 121, 14, 0.712);
+    color: white;
+    padding: 2%;
+}
