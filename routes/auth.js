@@ -27,6 +27,7 @@ router.route('/:path/signup')
 // Login route
 router.route('/:path/login')
     .get(authController.getLogin)
+    .post(authController.postSignup)
 
 
 
