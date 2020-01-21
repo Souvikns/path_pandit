@@ -332,11 +332,13 @@ h2{
 .namaste{
     width: 50%;
     margin: 40% 20% ;
+    
 }
 
 .red-button-login {
     
     border-color: whitesmoke;
+    background-color: whitesmoke;
     color: red;
     font-size: 1rem;
     padding: .3rem 2.5rem;
@@ -375,7 +377,20 @@ h2{
   }
 .login-form{
     padding: 4% 18% 7% 18%;
+    border: solid;
+    border-width: 1px;
+    border-right: none;
+    border-bottom: none;
+    
 }
 .row{
     margin: 0;
+}
+.login-back{
+    background-color: #FEC969;
+    border: solid;
+    border-width: 1px;
+    border-right: none;
+    border-bottom: none;
+
 }
