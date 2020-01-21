@@ -24,7 +24,6 @@ exports.getSignUp = (req, res) => {
 
 exports.getLogin = (req, res) => {
     const path = req.params.path
-    req.session.isLogin = false 
     if(path==="user"){
         res.render('login',{
             page: "User"
