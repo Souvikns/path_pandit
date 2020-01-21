@@ -4,7 +4,7 @@
 <center>
     <h1><%= page %> Login Page</h1>
 
-    <form action="/auth/user/login" method="POST" >
+    <form action=<%="/auth/"+ path +"/login" %>  method="POST" >
         <p>First Name</p>
         <input type="text" name="fName">
         <p>Last Name</p>

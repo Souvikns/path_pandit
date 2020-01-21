@@ -1,5 +1,9 @@
+// importing modules
+const bcrypt = require('bcryptjs')
 const User = require('../model/users')
+const Pandit = require('../model/pandit')
 
+//=============================================
 
 // signup contollers 
 exports.getSignUp = (req, res) => {
@@ -12,31 +16,73 @@ exports.getSignUp = (req, res) => {
     
 }
 
-exports.postSignup = (req,res)=>{
+exports.postSignupUser = (req,res)=>{
     fName = req.body.fName
     lName= req.body.lName 
     email = req.body.email 
     password = req.body.password 
     address = req.body.address 
-    User.create({
-        f_name: fName,
-        l_name: lName,
-        email: email,
-        password: password,
-        address: address
-    }).then(response=>{
-        console.log(response)
-        req.session.isLogin = true
+    User.findOne({
+        where: {
+            email: email
+        }
+    }).then(data=>{
+        if(data){
+            return res.redirect('/auth/user/login')
+        }
+        return bcrypt.hash(password,12)
+    })
+    .then(hashedpassword=>{
+        return User.create({
+            f_name: fName,
+            l_name: lName,
+            email: email,
+            password: hashedpassword,
+            address: address
+        })
+    })
+    .then(response=>{
+        console.log("User created")
         res.redirect('/')
-        
-    }).catch(err=>{
+    })
+    .catch(err=>{
         console.log(err)
     })
 }
 
-
-
-
+exports.postSignupPandit = (req,res) =>{
+    fName = req.body.fName
+    lName= req.body.lName 
+    email = req.body.email 
+    password = req.body.password 
+    address = req.body.address 
+    Pandit.findOne({
+        where: {
+            email: email
+        }
+    }).then(data=>{
+        if(data){
+            return res.redirect('/auth/user/login')
+        }
+        return bcrypt.hash(password,12)
+    })
+    .then(hashedpassword=>{
+        return Pandit.create({
+            f_name: fName,
+            l_name: lName,
+            email: email,
+            password: hashedpassword,
+            address: address
+        })
+    })
+    .then(response=>{
+        console.log("User created")
+        res.redirect('/')
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+}
 
 
 //===========================================
@@ -44,15 +90,18 @@ exports.postSignup = (req,res)=>{
 
 // login controllers 
 
-exports.getLogin = (req, res) => {
-    const path = req.params.path
-    if(path==="user"){
-        res.render('login',{
-            page: "User"
-        })
-    }else{
-        res.render('login',{
-            page: "Pandit"
-        })
-    }
+exports.getLoginUser = (req, res) => {
+    res.render('login',{
+        page: "User",
+        path: "user"
+    })
 }
+
+exports.getLoginPandit = (req,res)=>{
+    res.render('login',{
+        page: "Pandit",
+        path: "pandit"
+    })
+}
+
+

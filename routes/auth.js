@@ -25,9 +25,19 @@ router.route('/:path/signup')
 
 
 // Login route
-router.route('/:path/login')
-    .get(authController.getLogin)
-    .post(authController.postSignup)
+router.route('/user/login')
+    .get(authController.getLoginUser)
+    .post(authController.postSignupUser)
+
+
+// Pandit login route 
+
+router.route('/pandit/login')
+    .get(authController.getLoginPandit)
+    .post(authController.postSignupPandit)
+//pandit signup route 
+
+
 
 
 
