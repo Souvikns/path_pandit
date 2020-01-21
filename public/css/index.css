@@ -364,10 +364,11 @@ h2{
   }
   .text-box{
       border: solid;
-      border-width: 1px;
+      border-width: 2px;
       border-radius: 12px;
       padding: 3.5%;
-      box-shadow: 0.1rem 0.1rem black;
+      box-shadow: 0.05rem 0.05rem black;
+      border-color: gray;
   }
   .input-box:hover{
       transform: scale(1.2);
