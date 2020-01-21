@@ -325,35 +325,15 @@ h2{
     }
 }
 /*--------------------------------------------------*******************************************-----------------------------------------------*/
-.login-div{
-    position: relative;
-    width: 100%;
-    height: 102vh;
-}
-.login-footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
 
-.login-image{
-    width: 100%;
-    
-}
-.login-background{
-    background-color: #FEC969;
-    height: 100%;
-}
+
+
+
 .namaste{
     width: 50%;
     margin: 40% 20% ;
 }
-.row{
-    margin-right: 0;
-    position: absolute;
-    width: 100%;
-    
-}
+
 .red-button-login {
     
     border-color: whitesmoke;
@@ -394,4 +374,7 @@ h2{
   }
 .login-form{
     padding: 7% 18%;
+}
+.row{
+    margin: 0;
 }
