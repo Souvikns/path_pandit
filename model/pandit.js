@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 
 const sequelize = require('../database/connection')
 
-const User = sequelize.define('user',{
+const Pandit = sequelize.define('pandit',{
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -15,7 +15,7 @@ const User = sequelize.define('user',{
     },
     l_name: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
     },
     email: {
         type: Sequelize.STRING,
@@ -31,4 +31,4 @@ const User = sequelize.define('user',{
     }
 })
 
-module.exports = User
+module.exports = Pandit
