@@ -4,27 +4,29 @@
 <center>
     <h1><%= page %> Login Page</h1>
 
-    <form action=<%="/auth/"+ path +"/login" %>  method="POST" >
-        <p>First Name</p>
-        <input type="text" name="fName">
-        <p>Last Name</p>
-        <input type="text" name="lName">
-        <p>Email</p>
-        <input type="email" name="email">
-        <p>Password</p>
-        <input type="password" name="password"> 
-        <p>Address</p>
-        <input type="text" name="address">
-        <br><br>
-
-        <button type="submit">Login</button>
-    </form>
+    
 </center>
 <div class="row">
     <div class="col-lg-6 login-back">
         <img class="login-image"src="\images\landing.png" alt="">
     </div>
-    <div class="col-lg-6"></div>
+    <div class="col-lg-6">
+        <form action=<%="/auth/"+ path +"/login" %>  method="POST" >
+            <p>First Name</p>
+            <input type="text" name="fName">
+            <p>Last Name</p>
+            <input type="text" name="lName">
+            <p>Email</p>
+            <input type="email" name="email">
+            <p>Password</p>
+            <input type="password" name="password"> 
+            <p>Address</p>
+            <input type="text" name="address">
+            <br><br>
+    
+            <button type="submit">Login</button>
+        </form>
+    </div>
 
 </div>
 
