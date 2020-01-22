@@ -27,7 +27,8 @@ exports.getPuja = (req,res)=>{
     }).then(data=>{
         res.render('details',{
             title: data,
-            body: details
+            body: details,
+            isLogin: req.session.isLogin
         })
     }).catch(err=>{
         console.log(err)
