@@ -37,6 +37,7 @@ router.route('/pandit/login')
     .post(authController.postSignupPandit)
 //pandit signup route 
 
+router.get('/logout',authController.logout)
 
 
 
