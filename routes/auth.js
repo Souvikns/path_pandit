@@ -16,8 +16,14 @@ const router = express.Router()
 //Routes 
 
 // Signup route
-router.route('/:path/signup')
-    .get(authController.getSignUp)
+router.route('/pandit/signup')
+    .get(authController.getPanditSignup)
+    .post(authController.postSignupPandit)
+
+
+router.route('/user/signup')
+    .get(authController.getuserSignUp)
+    .post(authController.postSignupUser)
 
 // router.route('/pandit/signup')
 //     .get()
@@ -27,7 +33,7 @@ router.route('/:path/signup')
 // Login route
 router.route('/user/login')
     .get(authController.getLoginUser)
-    .post(authController.postSignupUser)
+    .post(authController.postUserLogin)
 
 
 // Pandit login route 

@@ -6,14 +6,18 @@ const Pandit = require('../model/pandit')
 //=============================================
 
 // signup contollers 
-exports.getSignUp = (req, res) => {
-    const path = req.params.path
-    if (path === "user") {
-        res.send("User Signup page!!")
-    } else {
-        res.send("Pandit Signup page!!")
-    }
+exports.getuserSignUp = (req, res) => {
+    res.render('signup', {
+        page: "User",
+        path: "user"
+    })
+}
 
+exports.getPanditSignup = (req,res)=>{
+    res.render('signup',{
+        page: "Pandit",
+        path: 'pandit'
+    })
 }
 
 exports.postSignupUser = (req, res) => {
@@ -110,6 +114,36 @@ exports.getLoginPandit = (req, res) => {
 }
 
 
+exports.postUserLogin = (req,res)=>{
+    const email = req.body.email 
+    const password = req.body.password 
+    User.findOne({
+        where: {
+            email: email
+        }
+    }).then(data=>{
+        if(!data){
+            return res.redirect('/auth/user/login')
+        }
+        bcrypt.compare(password,data.password).then(doMatch=>{
+            if(doMatch){
+                req.session.isLogin = true
+                req.session.user = data
+                return req.session.save(err=>{
+                    console.log(err)
+                    res.redirect('/')
+                })
+            }
+            res.redirect('/auth/user/login')
+        })
+    }).catch(err=>{
+        console.log(err)
+        res.redirect('/auth/user/login')
+    })
+}
+
+//=================================================
+
 //Logout Controllers 
 
 exports.logout = (req,res)=>{
@@ -118,3 +152,4 @@ exports.logout = (req,res)=>{
         res.redirect('/')
     })
 }
+
