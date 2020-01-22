@@ -9,17 +9,20 @@ const Pandit = require('../model/pandit')
 exports.getuserSignUp = (req, res) => {
     res.render('signup', {
         page: "User",
-        path: "user"
+        path: "user",
+        isLogin: req.session.isLogin
     })
 }
 
 exports.getPanditSignup = (req,res)=>{
     res.render('signup',{
         page: "Pandit",
-        path: 'pandit'
+        path: 'pandit',
+        isLogin: req.session.isLogin 
     })
 }
 
+//User signup post controller##############################
 exports.postSignupUser = (req, res) => {
     fName = req.body.fName
     lName = req.body.lName
@@ -58,6 +61,8 @@ exports.postSignupUser = (req, res) => {
         })
 }
 
+
+// Pandit signup post controller##############################
 exports.postSignupPandit = (req, res) => {
     fName = req.body.fName
     lName = req.body.lName
@@ -102,18 +107,21 @@ exports.postSignupPandit = (req, res) => {
 exports.getLoginUser = (req, res) => {
     res.render('login', {
         page: "User",
-        path: "user"
+        path: "user",
+        isLogin: req.session.isLogin 
     })
 }
 
 exports.getLoginPandit = (req, res) => {
     res.render('login', {
         page: "Pandit",
-        path: "pandit"
+        path: "pandit",
+        isLogin: req.session.isLogin 
     })
 }
 
 
+// user signup post login 
 exports.postUserLogin = (req,res)=>{
     const email = req.body.email 
     const password = req.body.password 
