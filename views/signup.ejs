@@ -1,0 +1,52 @@
+<%- include('includes/header')   -%>
+
+<div class="login-div">
+
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-2 login-back">
+        <div class="login-background">
+            <h1 class="login-title">Welcome</h1>
+            <img class="namaste" src="\images\namaste.png" alt="">
+
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-2 login-form">
+        <form action=<%="/auth/"+ path +"/login" %>  method="POST" >
+            <p  class="form-text">First Name</p>
+            <div class="input-box">
+            <input class="text-box" type="text" name="fName">
+        </div>
+            <p class="form-text">Last Name</p>
+            <div class="input-box">
+            <input class="text-box" type="text" name="lName">
+        </div>
+            <p class="form-text">Email</p>
+            <div class="input-box">
+            <input class="text-box" type="email" name="email">
+        </div>
+            <p class="form-text">Password</p>
+            <div class="input-box">
+            <input class="text-box" type="password" name="password">
+        </div> 
+            <p class="form-text">Address</p>
+            <div class="input-box">
+            <input class="text-box" type="text" name="address">
+        </div>
+            <p class="form-text">Pincode</p>
+            <div class="input-box">
+            <input class="text-box" type="number" name="pincode">
+        </div>
+            <br><br>
+    
+            <button class="s_button red-button-login" type="submit">Login</button>
+        </form>
+    </div>
+
+</div>
+
+
+
+<div class="login-footer"> 
+<%-  include('includes/footer') -%>
+</div>
+</div>
