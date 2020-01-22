@@ -2,12 +2,12 @@ const Sequelize = require('sequelize')
 
 
 const sequelize = new Sequelize(
-    'path_puja',
-    'root',
-    'Souvik210899',
+    'sql12320072',
+    'sql12320072',
+    '6Kg8Y6KCpd',
     {
         dialect: 'mysql',
-        host: 'localhost',
+        host: 'sql12.freesqldatabase.com',
     }
 ) 
 
