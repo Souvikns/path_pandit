@@ -42,7 +42,11 @@ exports.postSignupUser = (req, res) => {
             })
             .then(response => {
                 console.log("User created")
-                res.redirect('/')
+                req.session.isLogin = true
+                return req.session.save(err=>{
+                    console.log(err)
+                    res.redirect("/")
+                })
             })
     })
         .catch(err => {

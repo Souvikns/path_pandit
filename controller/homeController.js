@@ -3,7 +3,11 @@ const details = require('../util/filehandling')
 
 exports.getHomePage = (req,res)=>{
     Puja.findAll({}).then(data=>{
-        res.render('index',{puja: data})
+        res.render('index',{
+            puja: data,
+            isLogin: req.session.isLogin
+        })
+        console.log(req.session.isLogin)
     }).catch(err=>{
         console.log(err)
         res.send("error")
