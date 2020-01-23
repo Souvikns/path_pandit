@@ -38,10 +38,12 @@ router.route('/user/login')
 
 // Pandit login route 
 
-router.route('/pandit/login')
-    .get(authController.getLoginPandit)
-    .post(authController.postSignupPandit)
-//pandit signup route 
+
+router.get('/pandit/login',authController.getLoginPandit)
+router.post('/pandit/login',authController.postpanditLogin)
+
+
+//   logout route 
 
 router.get('/logout',authController.logout)
 

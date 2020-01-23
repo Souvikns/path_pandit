@@ -2,6 +2,7 @@
 
 const express = require('express')
 const homeController = require('../controller/homeController')
+const isAuth = require('../util/isAuth')
 
 //=============================
 
@@ -18,8 +19,7 @@ const router = express.Router()
 router.route('/')
 .get(homeController.getHomePage)
 
-router.route('/about')
-.get(homeController.getAboutPage)
+router.get('/about',isAuth,homeController.getAboutPage)
 
 router.get('/:pname',homeController.getPuja)
 

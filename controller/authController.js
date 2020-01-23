@@ -152,6 +152,39 @@ exports.postUserLogin = (req,res)=>{
 
 //=================================================
 
+// Pandit post login 
+
+exports.postpanditLogin = (req,res)=>{
+    const email = req.body.email 
+    const password = req.body.password 
+    Pandit.findOne({
+        where: {
+            email: email
+        }
+    }).then(data=>{
+        if(!data){
+            return res.redirect('/auth/pandit/signup')
+        }
+        bcrypt.compare(password,data.password)
+        .then(doMatch=>{
+            if(doMatch){
+                req.session.isLogin = true
+                req.session.user = data
+                return req.session.save(err=>{
+                    console.log(err)
+                    res.redirect('/')
+                })
+            }
+        })
+    }).catch(err=>{
+        console.log(err)
+    })
+}
+
+
+
+//=================================================
+
 //Logout Controllers 
 
 exports.logout = (req,res)=>{
