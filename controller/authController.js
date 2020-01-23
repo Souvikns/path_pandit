@@ -22,6 +22,8 @@ exports.getPanditSignup = (req,res)=>{
     })
 }
 
+//=============================================
+
 //User signup post controller##############################
 exports.postSignupUser = (req, res) => {
     fName = req.body.fName
@@ -61,6 +63,7 @@ exports.postSignupUser = (req, res) => {
         })
 }
 
+//=============================================
 
 // Pandit signup post controller##############################
 exports.postSignupPandit = (req, res) => {
@@ -111,6 +114,7 @@ exports.getLoginUser = (req, res) => {
         isLogin: req.session.isLogin 
     })
 }
+//=============================================
 
 exports.getLoginPandit = (req, res) => {
     res.render('login', {
@@ -120,6 +124,7 @@ exports.getLoginPandit = (req, res) => {
     })
 }
 
+//=============================================
 
 // user signup post login 
 exports.postUserLogin = (req,res)=>{
@@ -194,3 +199,4 @@ exports.logout = (req,res)=>{
     })
 }
 
+//=============================================
