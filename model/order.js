@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 
 const sequelize = require('../database/connection')
 
-const Order = sequelize.define({
+const Order = sequelize.define('order',{
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,

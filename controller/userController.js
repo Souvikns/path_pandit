@@ -1,5 +1,6 @@
 const User = require('../model/users')
 const Pandit = require('../model/pandit')
+const Order = require('../model/order')
 
 
 
@@ -13,28 +14,29 @@ exports.getbookinPage = (req,res)=>{
 exports.postOrder = (req,res)=>{
     date = req.body.date 
     time = req.body.time 
-    User.findAll({
+    Pandit.findAll({
         where: {
-            email: req.session.user.email
+            city: req.session.user.city
         }
     }).then(data=>{
-        return Pandit.findAll({
-            where: {
-                city: data[0].city
-            }
-        })
-    })
-    .then(pdata=>{
-        data = {
+        var userEmail = req.session.user.email
+        var userAddress = req.session.user.address +" "+ req.session.user.city +" "+ req.session.user.pincode
+        return Order.create({
+            userEmail: userEmail,
+            userAddress: userAddress,
             date: date,
-            time: time,
-            user: data[0].city,
-            pandit: pdata
-        }
-        res.send(data)
-    })
-    .catch(err=>{
+            time: time
+        })
+
+        res
+    }).then(response=>{
+        console.log("Order taken")
+        return res.redirect('/')
+    }).catch(err=>{
         console.log(err)
     })
+
+    
+
 }
 
