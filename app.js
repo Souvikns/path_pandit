@@ -62,6 +62,12 @@ app.use(errorPage.errorPage)
 
 //port 
 
+
+//Associations 
+
+
+//================================
+
 sequelize.sync()
     .then(res => {
         app.listen(3000, () => {
