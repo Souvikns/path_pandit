@@ -1,6 +1,10 @@
 //importing modules
 
 const express = require('express')
+const islogin = require('../util/isAuth')
+const isUser = require('../util/isUser')
+const User = require('../model/users')
+const userController = require('../controller/userController')
 
 //=============================
 
@@ -14,22 +18,10 @@ const router = express.Router()
 
 //Routes 
 
-router.get('/order',(req,res)=>{
-    res.render('order',{
-        isLogin: req.session.isLogin
-    })
-})
+router.get('/order',islogin,isUser,userController.getbookinPage)
 
 
-router.post('/order',(req,res)=>{
-    date = req.body.date 
-    time = req.body.time 
-    data = {
-        date: date,
-        time: time
-    }
-    res.send(data)
-})
+router.post('/order',islogin,isUser,userController.postOrder)
 
 //=============================
 

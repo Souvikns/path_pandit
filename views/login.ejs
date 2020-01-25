@@ -26,7 +26,12 @@
         </form>
         <br>
 
-        <a class="signup" href="/auth/user/signup">Sign up </a>
+        <% if(path=="user"){%>
+            <a class="signup" href = "/auth/user/signup" >Sign up </a>
+        <%}else{%>
+            <a class="signup" href = "/auth/pandit/signup" >Sign up </a>
+        <%} %>
+
     </div>
 
 

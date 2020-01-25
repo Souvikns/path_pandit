@@ -56,6 +56,8 @@ exports.postSignupUser = (req, res) => {
             .then(response => {
                 console.log("User created")
                 req.session.isLogin = true
+                req.session.role = "user"
+                req.session.user = User
                 return req.session.save(err=>{
                     console.log(err)
                     res.redirect("/")
@@ -76,6 +78,8 @@ exports.postSignupPandit = (req, res) => {
     email = req.body.email
     password = req.body.password
     address = req.body.address
+    city = req.body.city 
+    pincode = req.body.pincode 
     Pandit.findOne({
         where: {
             email: email
@@ -92,12 +96,20 @@ exports.postSignupPandit = (req, res) => {
                     l_name: lName,
                     email: email,
                     password: hashedpassword,
-                    address: address
+                    address: address,
+                    city: city,
+                    pincode: pincode
                 })
             })
             .then(response => {
-                console.log("User created")
-                res.redirect('/')
+                console.log("Pandit created")
+                req.session.isLogin = true
+                req.session.role = "pandit"
+                req.session.user = Pandit
+                return req.session.save(err=>{
+                    console.log(err)
+                    res.redirect("/")
+                })
             })
     })
         .catch(err => {
@@ -146,6 +158,7 @@ exports.postUserLogin = (req,res)=>{
             if(doMatch){
                 req.session.isLogin = true
                 req.session.user = data
+                req.session.role = "user"
                 return req.session.save(err=>{
                     console.log(err)
                     res.redirect('/')
@@ -179,6 +192,7 @@ exports.postpanditLogin = (req,res)=>{
             if(doMatch){
                 req.session.isLogin = true
                 req.session.user = data
+                req.session.role = "pandit"
                 return req.session.save(err=>{
                     console.log(err)
                     res.redirect('/')
