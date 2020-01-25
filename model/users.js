@@ -28,6 +28,14 @@ const User = sequelize.define('user',{
     address: {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    city: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    pincode: {
+        type: Sequelize.STRING,
+        allowNull: false
     }
 })
 

@@ -31,6 +31,8 @@ exports.postSignupUser = (req, res) => {
     email = req.body.email
     password = req.body.password
     address = req.body.address
+    city = req.body.city 
+    pincode = req.body.pincode 
     User.findOne({
         where: {
             email: email
@@ -46,7 +48,9 @@ exports.postSignupUser = (req, res) => {
                     l_name: lName,
                     email: email,
                     password: hashedpassword,
-                    address: address
+                    address: address,
+                    city: city,
+                    pincode: pincode
                 })
             })
             .then(response => {
