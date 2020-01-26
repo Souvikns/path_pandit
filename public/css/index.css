@@ -122,10 +122,14 @@ h2{
 }
 /***************************************************Bottom******************************************/
 #Bottom{
+    
+    left: 0;
+   bottom: 0;
+   width: 100%;
     text-align: center;
     background-color: rgba(236, 121, 14, 0.712);
     color: white;
-    padding: 2%;
+    padding: 1%;
 }
 /***************************************************Media Query**************************************************/
 
@@ -282,6 +286,16 @@ h2{
 .date{
     margin-left: 5%;
 }
+.date:hover{
+    color: white;
+}
+.bookdate-button{
+    color: red;
+}
+.bookdate-button:hover{
+    color: white;
+    text-decoration: none;
+}
 
 /**************************************************************Media Query**************************************/
 @media (max-width:1200px){
@@ -429,4 +443,10 @@ h2{
     .namaste{
         margin: 45% 25%;
     }
+}
+.order-footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
