@@ -450,3 +450,67 @@ h2{
     bottom: 0;
     width: 100%;
 }
+.book{
+    text-align: center;
+    padding-top: 5%;
+}
+.book-div{
+   margin-top: 0;
+   padding: 5% 10%;
+
+}
+.book-button{
+    padding: 2px 20px;
+    border: solid;
+    border-width: 0.9px;
+    border-color: red;
+    color: red;
+    
+}
+.book-button:hover{
+    color: white;
+    background-color: red;
+
+
+}
+.book-diya{
+    width: 10%;
+    position: absolute;
+    top: 60%;
+    left: 70%;
+}
+.book-diya2{
+    width: 10%;
+    position: absolute;
+    top: 60%;
+    left: 22%;
+
+}
+.book-namaste{
+    
+    top: 60%;
+    width: 30%;
+}
+@media (max-width:1100px){
+    .book-diya{
+        width: 15%;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        visibility: hidden;
+    }
+    .book-diya2{
+        width: 15%;
+        position: absolute;
+        top: 60%;
+        left: 22%;
+        visibility: hidden;
+    
+    }
+    .book-namaste{
+    
+        top: 60%;
+        width: 50%;
+
+    }
+}

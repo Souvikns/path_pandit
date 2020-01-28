@@ -1,16 +1,22 @@
 <%- include('includes/header')   -%>
 
 
-<div>
-<form action="/user/order" method="post">
+<div class="book">
+    <h1>Book Your Date</h1>
+    <img src="\images\diya.png" class="book-diya" alt="Diya">
+    <img src="\images\diya2.png" class="book-diya2" alt="diya">
+    <div class="book-div">
+ <form action="/user/order" method="post">
     <input type="date" value="2018-07-22" name="date">
     <br> <br>
 
     <input type="time" name="time">
-    <button type="submit">Book</button>
+    <button type="submit" class="s_button book-button">Book</button>
+     </div> 
+     <img src="\images\namaste.png" class="book-namaste" alt="">
 
 </form>
-
+<p>*Please specify the time and date for the pooja to book a pandit</p>
 
 <div class="order-footer">
 <%-  include('includes/footer') -%>
