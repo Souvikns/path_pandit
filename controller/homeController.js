@@ -4,10 +4,7 @@ const details = require('../util/filehandling')
 exports.getHomePage = (req, res) => {
     Puja.findAll({}).then(data => {
         if (req.session.role === "pandit") {
-            res.render('panditDashboard',{
-                puja: data,
-                isLogin: req.session.isLogin
-            })
+            res.redirect('/pandit/dashboard')
         } else {
             res.render('index', {
                 puja: data,
