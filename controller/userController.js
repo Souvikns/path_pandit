@@ -22,6 +22,7 @@ exports.postOrder = (req,res)=>{
     time = req.body.time 
     var userEmail = req.session.user.email
     var userAddress = req.session.user.address +" "+ req.session.user.city +" "+ req.session.user.pincode
+    return res.redirect("/")
     Pandit.findAll({
         where: {
             city: req.session.user.city

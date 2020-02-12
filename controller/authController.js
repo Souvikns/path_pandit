@@ -197,6 +197,8 @@ exports.postpanditLogin = (req,res)=>{
                     console.log(err)
                     res.redirect('/')
                 })
+            }else{
+                res.redirect("/auth/pandit/login")
             }
         })
     }).catch(err=>{
